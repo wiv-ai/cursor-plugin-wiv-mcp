@@ -45,14 +45,6 @@ Once connected, the WIV MCP provides tools such as:
 
 For the full list and troubleshooting, see [WIV documentation](https://help.wiv.ai) or your WIV MCP server’s `/connect` page.
 
-## Submitting to the Cursor Marketplace
-
-To publish this plugin to the Cursor Marketplace:
-
-1. Ensure the repo is **public** and all files are committed.
-2. Run validation if using the multi-plugin template (`node scripts/validate-template.mjs`). For this single-plugin repo, confirm manually: `plugin.json` has valid `name` (kebab-case), `logo` path exists, and `mcp.json` is valid JSON.
-3. Submit the repo link to Cursor via Slack or email (e.g. `kniparko@anysphere.com`).
-
 ## License
 
 MIT
