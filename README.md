@@ -25,20 +25,38 @@ The plugin’s `mcp.json` uses the WIV MCP endpoint `https://mcp.wiv.ai/sse`. Re
 
 ## Tools
 
-Once connected, the WIV MCP provides tools such as:
+Once connected, the WIV MCP provides these tools:
 
 | Tool | Description |
 |------|-------------|
-| `wiv_list_workflows` | List workflows, with optional space filter |
-| `wiv_get_workflow` | Get a workflow by ID |
-| `wiv_list_spaces` | List spaces |
+| `wiv_list_workflows` | List all workflows |
+| `wiv_get_workflow` | Get details of a specific workflow |
+| `wiv_update_workflow` | Update an existing workflow |
+| `wiv_list_spaces` | List all available spaces |
+| `wiv_get_space` | Get details of a specific space |
+| `wiv_get_space_resources` | Get resources in a space |
 | `wiv_list_folders` | List workflow folders |
-| `wiv_start_execution` | Start a workflow execution |
-| `wiv_list_workflow_executions` | List executions for a workflow |
-| `wiv_stop_execution` | Stop a running execution |
-| `wiv_generate_workflow` | Generate a workflow from a natural language description |
+| `wiv_get_folder` | Get a specific workflow folder |
+| `wiv_start_execution` | Start/run a workflow execution |
+| `wiv_list_all_executions` | List executions for all workflows |
+| `wiv_list_workflow_executions` | List executions for a specific workflow |
+| `wiv_stop_execution` | Stop a workflow execution |
+| `wiv_get_execution_status` | Get the status of a workflow execution |
+| `wiv_list_cases` | List cases with optional filters |
+| `wiv_search_cases` | Search cases with filters, date range, and pagination |
+| `wiv_get_cases_summary` | Get cases summary/statistics |
+| `wiv_get_cases_filters` | Get available case filters |
+| `wiv_get_cases_filter_values` | Get possible values for a case filter |
+| `wiv_cases_query` | Flexible cases query using OpenSearch |
+| `wiv_search_msp_cases` | Search cases across MSP child tenants |
+| `wiv_get_msp_cases_summary` | Get MSP cases summary across child tenants |
+| `wiv_get_msp_cases_filter_values` | Get possible values for MSP case filter |
+| `wiv_list_msp_cases_types` | List case types across MSP child tenants |
+| `wiv_msp_cases_query` | Flexible MSP cases query using OpenSearch |
+| `wiv_generate_workflow` | Generate a workflow using AI from natural language |
+| `wiv_get_generated_workflow` | Poll for AI-generated workflow result |
 
-For the full list and troubleshooting, see [WIV documentation](https://help.wiv.ai/solutions/articles/501000341211) or your WIV MCP server’s `/connect` page.
+For troubleshooting, see [WIV documentation](https://help.wiv.ai) or [mcp.wiv.ai](https://mcp.wiv.ai).
 
 ## License
 

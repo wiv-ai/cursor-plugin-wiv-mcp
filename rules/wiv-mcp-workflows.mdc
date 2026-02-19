@@ -1,14 +1,16 @@
 ---
-description: Prefer WIV MCP tools when the user asks about workflows, runs, spaces, folders, or generating workflows from natural language.
+description: Prefer WIV MCP tools when the user asks about workflows, executions, spaces, folders, cases, or generating workflows from natural language.
 ---
 
 # WIV MCP workflow guidance
 
-When the user asks to list, create, run, or manage workflows—or to generate a workflow from a description—use the WIV MCP tools provided by the wiv-api server.
+When the user asks about workflows, executions, spaces, folders, cases, or AI-generated workflows, use the WIV MCP tools provided by the wiv-api server.
 
-- **List workflows / spaces / folders:** Use `wiv_list_workflows`, `wiv_list_spaces`, `wiv_list_folders`.
-- **Get workflow details:** Use `wiv_get_workflow` with the workflow ID.
-- **Start or stop executions:** Use `wiv_start_execution`, `wiv_list_workflow_executions`, `wiv_stop_execution`.
-- **Generate workflow from natural language:** Use `wiv_generate_workflow` with a clear prompt; include the workflow name and optionally space/folder.
+- **Workflows:** `wiv_list_workflows`, `wiv_get_workflow`, `wiv_update_workflow`.
+- **Spaces:** `wiv_list_spaces`, `wiv_get_space`, `wiv_get_space_resources`.
+- **Folders:** `wiv_list_folders`, `wiv_get_folder`.
+- **Executions:** `wiv_start_execution`, `wiv_list_all_executions`, `wiv_list_workflow_executions`, `wiv_stop_execution`, `wiv_get_execution_status`.
+- **Cases:** `wiv_list_cases`, `wiv_search_cases`, `wiv_get_cases_summary`, `wiv_get_cases_filters`, `wiv_get_cases_filter_values`, `wiv_cases_query`; for MSP: `wiv_search_msp_cases`, `wiv_get_msp_cases_summary`, `wiv_get_msp_cases_filter_values`, `wiv_list_msp_cases_types`, `wiv_msp_cases_query`.
+- **Generate workflow from natural language:** `wiv_generate_workflow` (then `wiv_get_generated_workflow` to poll for the result).
 
 Call the appropriate tool with the parameters the user provides rather than guessing IDs.
