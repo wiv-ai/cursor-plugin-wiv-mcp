@@ -1,0 +1,15 @@
+{
+  "name": "wiv-mcp",
+  "displayName": "WIV Workflow MCP",
+  "version": "1.0.0",
+  "description": "Exposes the WIV Workflow API to Cursor via MCP — list workflows, start and stop executions, generate workflows from natural language, and manage spaces and folders.",
+  "author": {
+    "name": "WIV.ai"
+  },
+  "license": "MIT",
+  "keywords": ["wiv", "workflow", "mcp", "automation", "cursor"],
+  "logo": "assets/logo.svg",
+  "mcpServers": "mcp.json",
+  "rules": "rules/",
+  "skills": "skills/"
+}

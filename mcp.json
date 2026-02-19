@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "wiv-api": {
+      "url": "https://mcp.wiv.ai/sse",
+      "headers": {
+        "X-API-Key": "YOUR_WIV_API_KEY"
+      }
+    }
+  }
+}

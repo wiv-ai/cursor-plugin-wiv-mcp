@@ -1,0 +1,14 @@
+---
+description: Prefer WIV MCP tools when the user asks about workflows, runs, spaces, folders, or generating workflows from natural language.
+---
+
+# WIV MCP workflow guidance
+
+When the user asks to list, create, run, or manage workflows—or to generate a workflow from a description—use the WIV MCP tools provided by the wiv-api server.
+
+- **List workflows / spaces / folders:** Use `wiv_list_workflows`, `wiv_list_spaces`, `wiv_list_folders`.
+- **Get workflow details:** Use `wiv_get_workflow` with the workflow ID.
+- **Start or stop executions:** Use `wiv_start_execution`, `wiv_list_workflow_executions`, `wiv_stop_execution`.
+- **Generate workflow from natural language:** Use `wiv_generate_workflow` with a clear prompt; include the workflow name and optionally space/folder.
+
+Call the appropriate tool with the parameters the user provides rather than guessing IDs.
