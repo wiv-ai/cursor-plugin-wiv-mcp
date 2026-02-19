@@ -2,9 +2,13 @@
 
 Exposes the **WIV Workflow API** to Cursor via the Model Context Protocol (MCP). Use natural language to list workflows, start and stop executions, generate workflows from descriptions, and manage spaces and folders.
 
+## Authentication required
+
+The WIV MCP uses your WIV organization account. You must **authenticate once at [https://mcp.wiv.ai](https://mcp.wiv.ai)** to get your API key and server URL. Sign in with WIV (OAuth), then use the one-click install or copy the API key into Cursor.
+
 ## Prerequisites
 
-- **Remote (recommended):** None. Use your hosted WIV MCP endpoint.
+- **Remote (recommended):** A WIV account. Authenticate at [mcp.wiv.ai](https://mcp.wiv.ai) to get your API key.
 - **Local Docker:** Docker and a WIV API key (only if you run the MCP server locally via Docker).
 
 ## Setup
@@ -12,9 +16,9 @@ Exposes the **WIV Workflow API** to Cursor via the Model Context Protocol (MCP).
 ### Option 1: Connect to your hosted WIV MCP (recommended)
 
 1. Install this plugin from the Cursor Marketplace (or add from repo: `cursor-plugin-wiv-mcp`).
-2. Get your **API key** from the WIV connect page:
-   - Open **https://mcp.wiv.ai/connect** and sign in with WIV (OAuth) if prompted.
-   - Copy the **X-API-Key** value shown for Cursor.
+2. **Authenticate and get your API key:**
+   - Open **[https://mcp.wiv.ai](https://mcp.wiv.ai)** and sign in with your WIV organization account.
+   - After sign-in, copy the **X-API-Key** (and Server URL if shown) for Cursor.
 3. In Cursor: **Settings → Tools & MCP → Add new MCP server** (or edit `~/.cursor/config/mcp.json`):
    - **Name:** `wiv-api`
    - **Type:** `streamableHttp` (or HTTP/SSE)
@@ -22,7 +26,7 @@ Exposes the **WIV Workflow API** to Cursor via the Model Context Protocol (MCP).
    - **Headers:** `X-API-Key: <your-api-key>`
 4. Restart Cursor so the MCP server loads.
 
-The plugin’s `mcp.json` uses the WIV MCP endpoint `https://mcp.wiv.ai/sse`. Replace `YOUR_WIV_API_KEY` with your API key (from [mcp.wiv.ai/connect](https://mcp.wiv.ai/connect)), or add the server in Cursor’s UI as above.
+The plugin’s `mcp.json` uses the WIV MCP endpoint `https://mcp.wiv.ai/sse`. Replace `YOUR_WIV_API_KEY` with the API key you get after signing in at [mcp.wiv.ai](https://mcp.wiv.ai), or add the server in Cursor’s UI as above.
 
 ### Option 2: Run MCP locally with Docker
 
