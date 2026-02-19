@@ -38,7 +38,7 @@ Once connected, the WIV MCP provides tools such as:
 | `wiv_stop_execution` | Stop a running execution |
 | `wiv_generate_workflow` | Generate a workflow from a natural language description |
 
-For the full list and troubleshooting, see [WIV documentation](https://help.wiv.ai) or your WIV MCP server’s `/connect` page.
+For the full list and troubleshooting, see [WIV documentation](https://help.wiv.ai/solutions/articles/501000341211) or your WIV MCP server’s `/connect` page.
 
 ## License
 
