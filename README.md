@@ -56,7 +56,7 @@ Once connected, the WIV MCP provides these tools:
 | `wiv_generate_workflow` | Generate a workflow using AI from natural language |
 | `wiv_get_generated_workflow` | Poll for AI-generated workflow result |
 
-For troubleshooting, see [WIV documentation](https://help.wiv.ai) or [mcp.wiv.ai](https://mcp.wiv.ai).
+For troubleshooting, see [WIV documentation](https://help.wiv.ai) or [support](https://help.wiv.ai).
 
 ## License
 
