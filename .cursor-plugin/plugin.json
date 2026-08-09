@@ -1,8 +1,8 @@
 {
   "name": "wiv-mcp",
   "displayName": "WIV Workflow MCP",
-  "version": "1.0.0",
-  "description": "Exposes the WIV Workflow API to Cursor via MCP — workflows, spaces, folders, executions, cases, and AI-generated workflows. Authenticate at mcp.wiv.ai to get your API key.",
+  "version": "1.1.0",
+  "description": "Connect Cursor to Wiv through OAuth to manage workflows, executions, cases, spaces, integrations, datastores, dashboards, and MSP customers.",
   "author": {
     "name": "WIV.ai"
   },

@@ -1,16 +1,15 @@
 ---
-description: Prefer WIV MCP tools when the user asks about workflows, executions, spaces, folders, cases, or generating workflows from natural language.
+description: Prefer Wiv MCP tools for workflows, executions, cases, spaces, integrations, datastores, dashboards, and MSP customer operations.
 ---
 
 # WIV MCP workflow guidance
 
-When the user asks about workflows, executions, spaces, folders, cases, or AI-generated workflows, use the WIV MCP tools provided by the wiv-api server.
+When the user asks about data in their Wiv organization, use the tools and resources provided by the `wiv-api` server.
 
-- **Workflows:** `wiv_list_workflows`, `wiv_get_workflow`, `wiv_update_workflow`.
-- **Spaces:** `wiv_list_spaces`, `wiv_get_space`, `wiv_get_space_resources`.
-- **Folders:** `wiv_list_folders`, `wiv_get_folder`.
-- **Executions:** `wiv_start_execution`, `wiv_list_all_executions`, `wiv_list_workflow_executions`, `wiv_stop_execution`, `wiv_get_execution_status`.
-- **Cases:** `wiv_list_cases`, `wiv_search_cases`, `wiv_get_cases_summary`, `wiv_get_cases_filters`, `wiv_get_cases_filter_values`, `wiv_cases_query`; for MSP: `wiv_search_msp_cases`, `wiv_get_msp_cases_summary`, `wiv_get_msp_cases_filter_values`, `wiv_list_msp_cases_types`, `wiv_msp_cases_query`.
-- **Generate workflow from natural language:** `wiv_generate_workflow` (then `wiv_get_generated_workflow` to poll for the result).
-
-Call the appropriate tool with the parameters the user provides rather than guessing IDs.
+- Resolve names with list/search tools instead of guessing IDs.
+- Read the step catalog and workflow authoring guide before creating or replacing workflows.
+- Read the widget catalog and dashboard authoring guide before writing dashboard layouts.
+- Retrieve the current object before a full update and preserve fields outside the requested change.
+- Confirm destructive actions before calling delete, stop, or full-replacement tools.
+- Use metadata patch tools when the user is only changing names, descriptions, or labels.
+- For MSP customer writes, reconnect as that customer organization instead of attempting an impersonated write.

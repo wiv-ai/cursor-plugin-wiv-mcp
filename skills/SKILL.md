@@ -1,25 +1,32 @@
 ---
 name: wiv-mcp-workflows
-description: Use the WIV MCP to work with workflows, spaces, folders, executions, cases, and AI-generated workflows in Cursor.
+description: Use the Wiv MCP to work with workflows, executions, cases, spaces, integrations, datastores, dashboards, and MSP customers in Cursor.
 ---
 
 # WIV MCP workflows skill
 
-Use this skill when the user wants to work with WIV workflows, spaces, folders, executions, or cases inside Cursor.
+Use this skill when the user wants to inspect or change data in their Wiv organization from Cursor.
 
 ## When to use
 
-- User asks to list or manage workflows, spaces, or folders.
+- User asks to list, create, edit, or run workflows.
 - User wants to start, stop, or inspect workflow executions.
-- User asks about cases (list, search, summary, filters) or MSP cases.
-- User wants to generate a workflow from a natural language description.
+- User asks about cases, spaces, folders, integrations, datastores, or dashboards.
+- User wants to generate a workflow from natural language.
+- User manages customer tenants through a Wiv MSP organization.
 
 ## How to use
 
 1. Ensure the WIV MCP server (`wiv-api`) is configured and connected (see plugin README).
-2. Call the relevant MCP tool: workflows (`wiv_list_workflows`, `wiv_get_workflow`, `wiv_update_workflow`), spaces (`wiv_list_spaces`, `wiv_get_space`, `wiv_get_space_resources`), folders (`wiv_list_folders`, `wiv_get_folder`), executions (`wiv_start_execution`, `wiv_list_all_executions`, `wiv_list_workflow_executions`, `wiv_stop_execution`, `wiv_get_execution_status`), cases (`wiv_list_cases`, `wiv_search_cases`, `wiv_get_cases_summary`, etc.), or AI generation (`wiv_generate_workflow`, `wiv_get_generated_workflow`).
+2. Use list/search tools to resolve names to IDs instead of guessing identifiers.
+3. Read `wiv://catalog/steps` and `wiv://guides/workflow-authoring` before creating or replacing workflows.
+4. Read `wiv://catalog/widgets` and `wiv://guides/dashboard-authoring` before creating dashboard layouts.
+5. Retrieve the current object before a full update, preserve fields the user did not ask to change, and confirm destructive operations.
 
 ## Tips
 
-- For `wiv_generate_workflow`, include the workflow name in the prompt; use `wiv_get_generated_workflow` to poll for the result.
-- Use `wiv_list_workflows`, `wiv_list_folders`, or `wiv_list_spaces` first when you need an ID the user referred to by name.
+- Workflow JSON uses `snake_case`, starts with one `TRIGGER` step, ends with one `EXIT` step, and links steps through `next_step`.
+- Create schedules with trigger tools after creating the workflow. Do not invent scheduled trigger parameters on the workflow's `TRIGGER` step.
+- Use `wiv_patch_workflow` for metadata-only edits and `wiv_update_workflow` for full step changes.
+- Use `wiv_generate_workflow` for natural-language drafts. Poll with `wiv_get_generated_workflow` when the client does not support MCP Tasks.
+- When connected as an MSP parent, pass `customer_id` only for supported read operations. Reconnect as the customer organization before writing customer data.
